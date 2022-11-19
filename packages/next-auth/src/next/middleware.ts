@@ -102,7 +102,7 @@ async function handleMiddleware(
   onSuccess?: (token: JWT | null) => Promise<NextMiddlewareResult>
 ) {
   const { pathname, search, origin, basePath } = req.nextUrl
-
+  console.log('WKV middleware', req);
   const signInPage = options?.pages?.signIn ?? "/api/auth/signin"
   const errorPage = options?.pages?.error ?? "/api/auth/error"
   const authPath = parseUrl(process.env.NEXTAUTH_URL).path

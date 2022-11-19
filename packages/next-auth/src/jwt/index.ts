@@ -81,6 +81,7 @@ export async function getToken<R extends boolean = false>(
     secret = process.env.NEXTAUTH_SECRET,
   } = params
 
+  console.log(`WKV gettoken req: `, req)
   if (!req) throw new Error("Must pass `req` to JWT getToken()")
 
   const sessionStore = new SessionStore(

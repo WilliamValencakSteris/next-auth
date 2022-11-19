@@ -1,5 +1,6 @@
 /** Extract the host from the environment */
 export function detectHost(forwardedHost: any) {
+  console.log('WKV detect', forwardedHost);
   // If we detect a Vercel environment, we can trust the host
   if (process.env.VERCEL ?? process.env.AUTH_TRUST_HOST)
     return forwardedHost

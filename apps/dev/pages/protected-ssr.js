@@ -34,6 +34,7 @@ export async function getServerSideProps(context) {
   let content = null
 
   if (session) {
+    console.log(`WKV Protected SSR: `, context.req);
     const hostname = process.env.NEXTAUTH_URL || "http://localhost:3000"
     const options = { headers: { cookie: context.req.headers.cookie } }
     const res = await fetch(`${hostname}/api/examples/protected`, options)
